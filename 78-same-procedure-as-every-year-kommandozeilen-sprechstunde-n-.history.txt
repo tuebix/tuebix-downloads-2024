@@ -1,0 +1,365 @@
+ 1000  alias l1='ls -p --color=always | less -iXRS'
+ 1001  alias ll='ls -l -h -p --color=auto'
+ 1002  alias la='ls -A -p --color=auto'
+ 1003  alias lla='ls -A -l -h -p --color=auto'
+ 1004  ll
+ 1005  clr
+ 1006  ll 
+ 1007  ll *tex.
+ 1008  ll *tex
+ 1009  ll
+ 1010  ll *pdf
+ 1011  ls -l *pdf
+ 1012  l1 *.tex
+ 1013  l1 *.pdf
+ 1014  ll *.pdf
+ 1015  man man
+ 1016  man passwd 
+ 1017  man 5 passwd 
+ 1018  man ssh_config
+ 1019  man ls
+ 1020  ls -p
+ 1021  ls
+ 1022  \ls
+ 1023  type -a ls
+ 1024  type -a _ls
+ 1025  e
+ 1026  emacs -nw &
+ 1027  %
+ 1028  man ls | grep -p
+ 1029  man ls | grep "-p"
+ 1030  man ls | grep '-p'
+ 1031  man ls | grep .-p
+ 1032  man ls | grep ^-p
+ 1033  man ls | grep -- -p
+ 1034  man ls | grep -4 -- -p
+ 1035  man ls | grep -A4 -- -p
+ 1036  man ls | grep -B4 -- -p
+ 1037  man ls | grep -A4 -B4 -- -p
+ 1038  type -a _ls
+ 1039  l2() {  ls -p --color=always | less -iXRS  } 
+ 1040  l2() {  ls -p --color=always | less -iXRS ; } 
+ 1041  l2
+ 1042  l2 *.tex
+ 1043  echo l2 *.tex
+ 1044  l2 *.tex
+ 1045  echo  Tuebix > "Hallo Welt"
+ 1046  l
+ 1047  ll -t
+ 1048  ll -tr
+ 1049  ll -trc
+ 1050  l2() {  ls -p --color=always $* | less -iXRS ; } 
+ 1051  l2 Hall*
+ 1052  echo l2 Hall*
+ 1053  ll Hal*
+ 1054  l2() {  ls -p --color=always "$*" | less -iXRS ; } 
+ 1055  l2 Hall*
+ 1056  l2() {  ls -p --color=always "$@" | less -iXRS ; } 
+ 1057  l2 Hall*
+ 1058  l2 -l Hall*
+ 1059  l3() {  ( echo Titel ; echo ; ls -p --color=always "$@" ) | less -iXRS ; } 
+ 1060  l3 *tex
+ 1061  l3 *tue*
+ 1062  l2() {  ls -p --color=always "$*" | less -iXRS ; } 
+ 1063  l2 -l h*
+ 1064  l2 -- -l h*
+ 1065  ll he*
+ 1066  ;; He*
+ 1067  ll He*
+ 1068  ll
+ 1069  ll H*
+ 1070  set 
+ 1071  set  | less
+ 1072  ll *.t*
+ 1073  echo $1
+ 1074  echo $2
+ 1075  echo $*
+ 1076  set -- aa bb cc "ddd"
+ 1077  set -- aa bb cc "ddd  eee"
+ 1078  echo $1
+ 1079  echo $2
+ 1080  echo $3
+ 1081  echo $4
+ 1082  echo $*
+ 1083  for n in $* ; do echo $n ; done
+ 1084  for n in "$*" ; do echo $n ; done
+ 1085  for n in $@ ; do echo $n ; done
+ 1086  for n in "$@" ; do echo $n ; done
+ 1087  for n in Ha* ; do echo $n ; done
+ 1088  for n in Ha* ; do ls -l  $n ; done
+ 1089  for n in Ha* ; do ls -l  "$n" ; done
+ 1090  for n in "*" Ha* ; do ls -l  "$n" ; done
+ 1091  for n in "*" Ha* ; do ls -l  $n ; done
+ 1092  alias
+ 1093  pwd
+ 1094  dirs
+ 1095  pushd ../../tuebix-2023/
+ 1096  pushd  ~
+ 1097  pushd  /tmp/
+ 1098  pushd  ~/download/jeopardy/tuebix/
+ 1099  dirs
+ 1100  dirs -v
+ 1101  pushd  +4
+ 1102  dirs -v
+ 1103  p /etc/
+ 1104  alias
+ 1105  alias p=pushd
+ 1106  jobs
+ 1107  alias j=jobs
+ 1108  alias e='emacs -nw'
+ 1109  dirs
+ 1110  alias 'd=dirs'
+ 1111  d
+ 1112  alias 'd=dirs -v'
+ 1113  d
+ 1114  p +2
+ 1115  alias p2='p +2'
+ 1116  alias p3='p +3'
+ 1117  for n in {2..30} ; do alias p$n='p +$n' ; done
+ 1118  alias
+ 1119  d
+ 1120  p4
+ 1121  alias
+ 1122  for n in {2..30} ; do alias p$n="p +$n" ; done
+ 1123  alias
+ 1124  d
+ 1125  p4
+ 1126  suspend
+ 1127  p /tmp/
+ 1128  p3
+ 1129  p /tmp
+ 1130  d
+ 1131  d | cut -f2-
+ 1132  d | cut -d" " -f2-
+ 1133  d | cut -d" " -f3-
+ 1134  d | cut -d" " -f3-  |sort
+ 1135  d | cut -d" " -f3-  |sort | uniq -c
+ 1136  d | cut -d" " -f3-  |sort | uniq -c | grep -v ' 1 '
+ 1137  d | cut -d" " -f3-  |sort | uniq -c | grep -v ' 1 ' | cut -f2-
+ 1138  d | cut -d" " -f3-  |sort
+ 1139  d | cut -d" " -f3-  |sort -u
+ 1140  d | cut -d" " -f3-  | sort | uniq -c 
+ 1141  d | cut -d" " -f3-  | sort | uniq -c | grep -v ' 1 ' 
+ 1142  d | cut -d" " -f3-  | sort | uniq -c | grep -v ' 1 '  
+ 1143  d | cut -d" " -f3-  | sort | uniq -c | grep -v ' 1 '  | cut -c8-
+ 1144  x=$( d | cut -d" " -f3-  | sort | uniq -c | grep -v ' 1 '  | cut -c8- )
+ 1145  echo $x
+ 1146  d 
+ 1147  d | grep $x
+ 1148  d
+ 1149  popd +6
+ 1150  d
+ 1151  popd +4
+ 1152  d
+ 1153  popd
+ 1154  p4
+ 1155  p3
+ 1156  ll
+ 1157  d
+ 1158  p3
+ 1159  ll
+ 1160  ll w*
+ 1161  cd ..
+ 1162  ll w*
+ 1163  e wpa_supplicant.conf 
+ 1164  cat wpa_supplicant.conf
+ 1165  less wpa_supplicant.conf
+ 1166  %
+ 1167  less wpa_supplicant.conf
+ 1168  grep Hotel wpa_supplicant.conf
+ 1169  less wpa_supplicant.conf
+ 1170  }
+ 1171  network={
+ 1172  }
+ 1173  network={
+ 1174  }
+ 1175  less wpa_supplicant.conf
+ 1176  man awk
+ 1177  type -a tel
+ 1178  less `type -a tel`
+ 1179  man awk
+ 1180  man gawk
+ 1181  man nawk
+ 1182  awk '/Hotel/ { print }' wpa_supplicant.conf
+ 1183  cat wpa_supplicant.conf
+ 1184  awk -F=  '/ssid=/ { ssid=$2  }/disabled/{ if ($2 < 1) print ssid} ' wpa_supplicant.conf
+ 1185  awk -F=  '/ssid=/ { ssid=$2  }/disabled/{ print ssid, $2} ' wpa_supplicant.conf
+ 1186  awk -F=  '/ssid=/ { ssid=$2  }/disabled/{ print ssid, $2} ' wpa_supplicant.conf | sort -k2
+ 1187  awk -F=  '{print $1} ' wpa_supplicant.conf 
+ 1188  awk -F=  '{print NR, $1} ' wpa_supplicant.conf 
+ 1189  awk -F   '{print NR, $1} ' wpa_supplicant.conf 
+ 1190  awk  'BEGIN{ RS="" } {print NR, $1} ' wpa_supplicant.conf 
+ 1191  wc wpa_supplicant.conf
+ 1192  head -20 wpa_supplicant.conf
+ 1193  awk  'BEGIN{ RS="" } {print NR, $2} ' wpa_supplicant.conf 
+ 1194  awk  'BEGIN{ RS="" } {print NR, $0} ' wpa_supplicant.conf 
+ 1195  awk  'BEGIN{ RS="" } /IBIS_Nuernberg/ {print  $0} ' wpa_supplicant.conf 
+ 1196  awk  'BEGIN{ RS="}" } /IBIS_Nuernberg/ {print  $0} ' wpa_supplicant.conf 
+ 1197  awk  'BEGIN{ RS="^}" } /IBIS_Nuernberg/ {print  $0} ' wpa_supplicant.conf 
+ 1198  awk  'BEGIN{ RS="}" } /IBIS_Nuernberg/ {print  $0} ' wpa_supplicant.conf 
+ 1199  awk  'BEGIN{ RS="" } /IBIS_Nuernberg/ {print  $0} ' wpa_supplicant.conf 
+ 1200  awk  'BEGIN{ RS="" } /Hotel/ {print  $0} ' wpa_supplicant.conf 
+ 1201  echo < <( awk  'BEGIN{ RS="" } /Hotel/ {print  $0} ' wpa_supplicant.conf  )
+ 1202  echo  <( awk  'BEGIN{ RS="" } /Hotel/ {print  $0} ' wpa_supplicant.conf  )
+ 1203  cat   <( awk  'BEGIN{ RS="" } /Hotel/ {print  $0} ' wpa_supplicant.conf  )
+ 1204  tel roland
+ 1205  newtel
+ 1206  cat wpa_supplicant.conf
+ 1207  grep @ wpa_supplicant.conf
+ 1208  tr '\n' @ < wpa_supplicant.conf
+ 1209  tr '\n' @ < wpa_supplicant.conf | sed 's/@@/\n/'
+ 1210  tr '\n' @ < wpa_supplicant.conf | sed 's/@@/\n/' | wc
+ 1211  tr '\n' @ < wpa_supplicant.conf 
+ 1212  tr '\n' @ < wpa_supplicant.conf  | grep @@
+ 1213  tr '\n' @ < wpa_supplicant.conf  | sed 's/@@/\n/' 
+ 1214  tr '\n' @ < wpa_supplicant.conf  | sed 's/@@/\n/g' 
+ 1215  tr '\n' @ < wpa_supplicant.conf  | sed 's/@@/\n/g'  | grep Wel
+ 1216  tr '\n' @ < wpa_supplicant.conf  | sed 's/@@/\n/g'  | grep Wel | tr @ '\n'
+ 1217  tr '\n' @ < wpa_supplicant.conf  | sed 's/@@/\n/g'  | grep Hotel | tr @ '\n'
+ 1218  cat   <( awk  'BEGIN{ RS="" } /Hotel/ {print  $0} ' wpa_supplicant.conf  )
+ 1219  cat   <( awk  'BEGIN{ RS="" } /Hotel/ {print  $0"\n"} ' wpa_supplicant.conf  )
+ 1220  tr '\n' @ < wpa_supplicant.conf  | sed 's/@@/\n/g'  | grep Hotel | tr @ '\n'
+ 1221  tr '\n' @ < wpa_supplicant.conf  | sed 's/@@/\n/g'  | grep Hotel | tr @ '\n' | cat -n
+ 1222  cut  --help
+ 1223  du
+ 1224  du | cut -f2-
+ 1225  d | cut -d" " -f3-  | sort | uniq -c | grep -v ' 1 '  
+ 1226  d
+ 1227  p /tmp/
+ 1228  d
+ 1229  d | less
+ 1230  du | less
+ 1231  echo "	" | hexdump  -C
+ 1232  echo "	" | hexdump  -c
+ 1233  echo                      "	"
+ 1234  echo      "	" | od -c
+ 1235  echo      "    "
+ 1236  echo      "    " | od -c
+ 1237  echo      "    " | hexdump -C
+ 1238  history 
+ 1239  d
+ 1240  d | awk '{print $1}'
+ 1241  d | awk '{print $2}'
+ 1242  d | awk '{print $1}'
+ 1243  d | cut -d' ' -f1
+ 1244  d | cut -d' ' -f2
+ 1245  d
+ 1246  d | cut -d' ' -f3
+ 1247  d | cut -d' ' -f4
+ 1248  d
+ 1249  d | tr -s ' ' 
+ 1250  d | tr -s ' ' | cut -d' ' -f4
+ 1251  d | tr -s ' ' | cut -d' ' -f2
+ 1252  d | tr -s ' ' | cut -d' ' -f3
+ 1253  d | tr -s ' ' | sed 's/^ *//'  
+ 1254  d | tr -s ' ' | sed 's/^ *//'  | cut -d' ' -f1
+ 1255  d | tr -s ' ' | sed 's/^ *//'  | cut -d' ' -f2-
+ 1256  d 
+ 1257  d  | while read zahl dir ; do echo $zahl ; done
+ 1258  type -a read
+ 1259  cd /tmp/
+ 1260  ll /bin/ls
+ 1261  ll /bin/cd
+ 1262  env A=B bash
+ 1263  echo $$
+ 1264  d
+ 1265  d  | while read zahl dir ; do echo $zahl ; done
+ 1266  d | tr -s ' ' | sed 's/^ *//'  | cut -d' ' -f2-
+ 1267  d  | sort
+ 1268  dirs   | sort
+ 1269  while read n dir ; do echo $zahl ; done
+ 1270  d | while read n dir ; do echo $zahl ; done
+ 1271  d | while read n dir ; do echo $dir ; done
+ 1272  d | while read n d   ; do echo "$d" ; done
+ 1273  d | while read n d   ; do echo $d ; done
+ 1274  d | while read n d   ; do echo  "$d" ; done 
+ 1275  d | while read n d   ; do echo  "$d" ; done  | sort | uniq -c
+ 1276  d | while read n d   ; do echo  "$d" ; done  | sort | uniq -c | while read n d  ; do [ $n -gt 1 ] && echo $d ; done
+ 1277  d | while read n d   ; do echo  "$d" ; done  | sort | uniq -c | while read n d  ; do [ $n -gt 1 ] && dirs -v | grep "$d" ; done
+ 1278  d | while read n d   ; do echo  "$d" ; done  | sort | uniq -c | while read n d  ; do [ $n -gt 1 ] && dirs -v | grep "$d" | sort -nr ; done
+ 1279  d
+ 1280  d | while read n d   ; do echo  "$d" ; done  | sort | uniq -c | while read n d  ; do [ $n -gt 1 ] && dirs -v | grep "$d" | sort -nr ; done 
+ 1281  d | while read n d   ; do echo  "$d" ; done  | sort | uniq -c | while read n d  ; do [ $n -gt 1 ] && dirs -v | grep "$d" | sort -nr ; done  | sed '$d'
+ 1282  d | while read n d   ; do echo  "$d" ; done  | sort | uniq -c | while read n d  ; do [ $n -gt 1 ] && dirs -v | grep "$d" | sed 1d | sort -nr ; done 
+ 1283  d | while read n d   ; do echo  "$d" ; done  | sort | uniq -c | while read n d  ; do [ $n -gt 1 ] && dirs -v | grep "$d" | sed 1d | sort -nr ; done  | while read n d ; do popd +$n ; done
+ 1284  d
+ 1285  d | while read n d   ; do echo  "$d" ; done  | sort | uniq -c | while read n d  ; do [ $n -gt 1 ] && dirs -v | grep "$d" | sed 1d | sort -nr ; done  | while read n d ; do popd +$n ; done
+ 1286  d
+ 1287  d | while read n d   ; do echo  "$d" ; done  | sort | uniq -c | while read n d  ; do [ $n -gt 1 ] && dirs -v | grep "$d" | sed 1d | sort -nr ; done  | while read n d ; do popd +$n ; done
+ 1288  a=1
+ 1289  a=2 | a=3
+ 1290  echo $a
+ 1291  zsh
+ 1292  d | while read n d   ; do echo  "$d" ; done  | sort | uniq -c | while read n d  ; do [ $n -gt 1 ] && dirs -v | grep "$d" | sed 1d | sort -nr ; done  | while read n d ; do popd +$n ; done
+ 1293  d | while read n d   ; do echo  "$d" ; done  | sort | uniq -c | while read n d  ; do [ $n -gt 1 ] && dirs -v | grep "$d" | sed 1d | sort -nr ; done  
+ 1294* 
+ 1295  d
+ 1296  d | while read n d   ; do echo  "$d" ; done  | sort | uniq -c | while read n d  ; do [ $n -gt 1 ] && dirs -v | grep "$d" | sed 1d | sort -nr ; done
+ 1297  while read n d ; do popd +$n ; done   <  <(    d | while read n d   ; do echo  "$d" ; done  | sort | uniq -c | while read n d  ; do [ $n -gt 1 ] && dirs -v | grep "$d" | sed 1d | sort -nr ; done )
+ 1298  d
+ 1299  cd /etc/
+ 1300  ls
+ 1301  ll ssh*
+ 1302  cd sss
+ 1303  cd ssh
+ 1304  ll
+ 1305  cat ssh_config.d/
+ 1306  ll ssh_config.d/
+ 1307  cat  ssh_config.d/50-suse.conf 
+ 1308  cd sshd_config.d/
+ 1309  ll
+ 1310  cd ..
+ 1311  ll
+ 1312  less ldap.conf 
+ 1313  cd ..
+ 1314  grep = *
+ 1315  pwd
+ 1316  sed -i 's/^key=.*/key=new/' passwd
+ 1317  d
+ 1318  p
+ 1319  ll
+ 1320  cd shell-sprechstunde/
+ 1321  ll
+ 1322  sed -i 's/^key=.*/key=new/' Hallo\ Welt 
+ 1323  echo $?
+ 1324  sed -n /root/p /etc/passwd
+ 1325  awk '/root/{ print }'  /etc/passwd
+ 1326  sed -e 1,2d -e '$d' /etc/passwd
+ 1327  sed -e 1,2d -e '$d' /etc/passwd 
+ 1328  sed -e 1,2d -e '$d' /etc/passwd | sed '$d'
+ 1329  cat -n /etc/passwd
+ 1330  cat -n /etc/passwd | sed 1,2d | head
+ 1331  cat -n /etc/passwd | sed 1,2d | rev
+ 1332  cat -n /etc/passwd | sed 1,2d | tac
+ 1333  cat -n /etc/passwd | sed 1,2d | tac | less
+ 1334  cat -n /etc/passwd | sed 1,2d | tac | sed 1,2d | tac
+ 1335  cat -n /etc/passwd | sed 1,2d | tac | sed 1,2d | tac | less
+ 1336  cat -n /etc/passwd | sed 1,2d 
+ 1337  cat -n /etc/passwd | sed 1,2d  | sort -nr | less
+ 1338  cat -n /etc/passwd | sed 1,2d  | sort -nr | sed 1,2d less
+ 1339  cat -n /etc/passwd | sed 1,2d  | sort -nr | sed 1,2d | sort -n | less
+ 1340  cat -n /etc/passwd | sed 1,2d  | sort -nr | sed 1,2d | sort -n | cut -f2- | less
+ 1341  ll
+ 1342  ls
+ 1343  ls | rev
+ 1344  ls | rev | grep ^xet
+ 1345  ls | rev | grep ^xet | rev
+ 1346  man tac
+ 1347  wc -l /etc/passwd
+ 1348  n=$( wc -l /etc/passwd ) 
+ 1349  cat /etc/passwd | sed -e 1d -e 2d -e ${n}d  -e $[n-1]d 
+ 1350  cat /etc/passwd | echo sed -e 1d -e 2d -e ${n}d  -e $[n-1]d 
+ 1351  cat /etc/passwd
+ 1352  echo $n
+ 1353  wc -l /etc/passwd
+ 1354  wc -l < /etc/passwd
+ 1355  n=$( wc -l < /etc/passwd ) 
+ 1356  cat /etc/passwd | echo sed -e 1d -e 2d -e ${n}d  -e $[n-1]d 
+ 1357  cat /etc/passwd |  sed -e 1d -e 2d -e ${n}d  -e $[n-1]d 
+ 1358  cat /etc/passwd |  sed -e 1d -e 2d -e ${n}d  -e $[n-1]d | tail 
+ 1359  tail /etc/passwd
+ 1360  less ../../tuebix-2023/wafer/wafer/make_wafer.sh 
+ 1361  cat /etc/passwd | echo sed -e 1d -e 2d -e ${n}d  -e $[n-1]d 
+ 1362  sed -e '1d;2d;92d;91d' /etc/passwd
+ 1363  sed -e '1d;2d;92d;91d' /etc/passwd | less
+ 1364  history  > tuebix-2024-shell-sprechstunde.history
